@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Require JS Demo</title>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"></link>
+		<style type="text/css">
+			.page-header{
+				background-color:#97A2D8;
+			}
+			.mainContainer{
+				margin-top : 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="d-flex flex-row-reverse page-header">
+			<div class="p-2">
+				<h2>Application using Require.js</h2>
+			</div>						
+		</div>
+		<div class="container-fluid">
+			<div class="row mainContainer">
+				<div class="col-md-3">
+					<ul class="list-group">
+  						<li class="list-group-item">
+  							<a href="javascript:void(0)" class="continent_menu">Americas</a>
+  						</li>
+						<li class="list-group-item">
+							<a href="javascript:void(0)" class="continent_menu">Africa</a>
+						</li>
+						<li class="list-group-item">
+							<a href="javascript:void(0)" class="continent_menu">Asia</a>
+						</li>
+						<li class="list-group-item">
+							<a href="javascript:void(0)" class="continent_menu">Oceania</a>
+						</li>
+						<li class="list-group-item">
+							<a href="javascript:void(0)" class="continent_menu">Europe</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-9" id="region-info"></div>				
+			</div>
+		</div>
+		
+		
+		<script type="text/javaScript" data-main="app01/main" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+		<script type="text/javaScript">
+			require.config({
+				"shim" : {
+					"jquery.bootstrap" : {
+						"deps" : ["jquery"]
+					}
+				},
+				"paths" : {
+					"baseUrl" : "app01",
+					"jquery" : "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min",
+					"jquery.bootstrap" : "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min"
+				} 
+			});
+		</script>		
+	</body>
+</html>
